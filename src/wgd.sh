@@ -39,6 +39,7 @@ help () {
   printf "|    debug: To start WGDashboard in debug mode (i.e run in foreground).         |\n"
   printf "|    update: To update WGDashboard to the newest version from GitHub.           |\n"
   printf "|    install: To install WGDashboard.                                           |\n"
+  printf "|    version: To get current version of WGDashboard.                            |\n"
   printf "| Thank you for using! Your support is my motivation ;)                         |\n"
   printf "=================================================================================\n"
 }
