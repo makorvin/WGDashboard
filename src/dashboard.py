@@ -512,10 +512,12 @@ class WireguardConfiguration:
                     self.__parser.write(configFile)
                 self.__initPeersList()
         
-        print(f"[WGDashboard] Initialized Configuration: {name}")    
+        if __name__ == "__main__":
+            print(f"[WGDashboard] Initialized Configuration: {name}")    
         if self.getAutostartStatus() and not self.getStatus() and startup:
             self.toggleConfiguration()
-            print(f"[WGDashboard] Autostart Configuration: {name}")
+            if __name__ == "__main__":
+                print(f"[WGDashboard] Autostart Configuration: {name}")
         
                       
     def __initPeersList(self):

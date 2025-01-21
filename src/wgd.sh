@@ -443,6 +443,15 @@ update_wgd() {
 	fi
 }
 
+get_version() {
+	if [ ! -f "$venv_python" ];
+	then
+		printf "[WGDashboard] WGDashboard is not install yet. Please install it with [./wgd.sh install]\n"
+	else
+		sudo "$venv_python" -c "from dashboard import DASHBOARD_VERSION; print(DASHBOARD_VERSION)"
+	fi
+}
+
 if [ "$#" -lt 1 ]; then
 	help
 else
@@ -491,6 +500,8 @@ else
 		else
 			start_wgd_debug
 		fi
+	elif [ "$1" = "version" ]; then
+		get_version
 	else
 		help
 	fi
